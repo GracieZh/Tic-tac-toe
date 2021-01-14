@@ -36,31 +36,32 @@ public class MainActivity extends AppCompatActivity
     public void disable(View v)
     {
         v.setEnabled(false);
-        v.setBackgroundColor(Color.GREEN);
+        v.setBackgroundColor(Color.rgb(23,44,100));
 
 
         TextView text=(TextView)v;
         TextView tv2 = (TextView)findViewById(R.id.textView2);
+        text.setTextColor(Color.WHITE);
         View newGV = findViewById(R.id.newG);
         newGV.setVisibility(View.INVISIBLE);
 
-        if(prevTurn == "Frog")
+        if(prevTurn == "Player1")
         {
-            tv2.setText("Frog's Turn");
-            text.setText("Bear");
-            prevTurn = "Bear";
+            tv2.setText("Player1's Turn");
+            text.setText("Player2");
+            prevTurn = "Player2";
         }
-        else if(prevTurn == "Bear")
+        else if(prevTurn == "Player2")
         {
-            tv2.setText("Bear's Turn");
-            text.setText("Frog");
-            prevTurn = "Frog";
+            tv2.setText("Player2's Turn");
+            text.setText("Player1");
+            prevTurn = "Player1";
         }
         else
         {
-            tv2.setText("Bear's Turn");
-            text.setText("Frog"); // frog goes first
-            prevTurn = "Frog";
+            tv2.setText("Player2's Turn");
+            text.setText("Player1"); // Player1 goes first
+            prevTurn = "Player1";
         }
         fillGrid(v);
 
